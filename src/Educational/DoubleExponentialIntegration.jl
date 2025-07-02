@@ -1,5 +1,3 @@
-module DoubleExponentialIntegration
-
 using QuadGK
 include("Integration/trapezoid.jl")
 
@@ -10,4 +8,4 @@ include("DoubleExponentialIntegration/minus_one_to_one.jl")
 
 export deint
 
-end
+

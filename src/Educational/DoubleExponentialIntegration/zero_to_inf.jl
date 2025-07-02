@@ -11,7 +11,7 @@ function zero_to_inf(f::Function; atol::Real, rtol::Real)
     end
 
     range = 0.1*max_range
-    step = range
+    step = 0.05*max_range
     val0 = trapezoid(integrand, -range, range)
 #    val0, _ = quadgk(integrand, -range, range; atol = atol, rtol = rtol)
     range += step
