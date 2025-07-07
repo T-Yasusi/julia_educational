@@ -4,12 +4,13 @@ using Printf
 
 include("../../../src/Educational.jl")
 using .Educational.SpecialFunctions.OrthogonalPolynomials
+using .Educational.SpecialFunctions
 using .Educational.DoubleExponentialIntegration
 
 @variables x
-max_n = 5 # 最大次数
-α = 0
-β = 0
+max_n = 3 # 最大次数
+α = 2.5
+β = 3.5
 
 # 数値関数への変換関数
 function symbolic_to_function(p)
@@ -26,12 +27,12 @@ for m in 0:max_n
         f_m = symbolic_to_function(Pm_sym)
         f_n = symbolic_to_function(Pn_sym)
 
-        integrand(x) = (1-x)^α * (1-x)^β * f_m(x) * f_n(x)
+        integrand(x) = (1-x)^α * (1+x)^β * f_m(x) * f_n(x)
         I, err =  quadgk(integrand, -1, 1)
         
-#        expected = m == n ? 2^(α+β+1)/(2n+α+β+1) *gamma(n+α+1) *gamma(n+β+1)/(factorial(n)*gamma(n+α+β+1)) : 0
-        expected = m == n ? 2^(α+β+1)/(2n+α+β+1) *factorial(n+α) *factorial(n+β)/(factorial(n)*factorial(n+α+β)) : 0
+        expected = m == n ? 2^(α+β+1)/(2n+α+β+1) *gamma(n+α+1) *gamma(n+β+1)/(factorial(n)*gamma(n+α+β+1)) : 0
+#        expected = m == n ? 2^(α+β+1)/(2n+α+β+1) *factorial(n+α) *factorial(n+β)/(factorial(n)*factorial(n+α+β)) : 0
         
-        @printf "⟨P_%d, P_%d⟩ = %.6f (expected %.6f)\n" m n I expected
+        @printf "⟨P^%f^%f_%d, P^%f^%f_%d⟩ = %.6f (expected %.6f)\n" α β m α β n I expected
     end
 end

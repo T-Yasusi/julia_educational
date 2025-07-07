@@ -4,7 +4,7 @@ function minus_one_to_one(f::Function; atol::Real, rtol::Real)
 
     integrand(t) = f(phi(t)) * dphi(t)
 
-    max_range = 3.0;
+    max_range = 2.0;
     while isinf(integrand(-max_range)) || isinf(integrand(max_range))
         max_range = 0.9*max_range
         if( max_range < 1.0e-2 ) error("DE積分[-1:1]: コンバージョンしませんでした") end
