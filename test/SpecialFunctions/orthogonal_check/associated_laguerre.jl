@@ -1,3 +1,5 @@
+module AssociatedLaguerreTest
+
 using Test
 using Symbolics
 
@@ -28,4 +30,6 @@ end
             end
         end
     end
+end
+
 end

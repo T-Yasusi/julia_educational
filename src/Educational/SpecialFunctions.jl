@@ -9,7 +9,8 @@ using .DoubleExponentialIntegration
 
 include("SpecialFunctions/gamma.jl")
 include("SpecialFunctions/beta.jl")
+include("SpecialFunctions/faddeeva.jl")
 # include("SpecialFunctions/erf.jl")
-export gamma, beta
+export gamma, beta, faddeeva
 
 end

@@ -1,3 +1,5 @@
+module JacobiFunctionTest
+
 using Symbolics
 using QuadGK
 using Test
@@ -35,4 +37,6 @@ end
             @test isapprox(val, expected; atol=tolerance)
         end
     end
+end
+
 end

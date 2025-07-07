@@ -1,3 +1,5 @@
+module BetaGammaTest
+
 using Test
 
 include("../../src/Educational.jl")
@@ -16,4 +18,6 @@ tolerance = 1e-6
             @test isapprox(beta(z1, z2), gamma(z1)*gamma(z2)/gamma(z1+z2); atol = tolerance, rtol = tolerance)
         end
     end
+end
+
 end

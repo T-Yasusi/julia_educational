@@ -4,8 +4,8 @@ function zero_to_inf(f::Function; atol::Real, rtol::Real)
 
     integrand(t) = f(phi(t)) * dphi(t)
 
-    max_range = 20.0;
-    while isinf(integrand(-max_range)) || isinf(integrand(max_range))
+    max_range = 10.0;
+    while isinf(integrand(-max_range)) || isinf(integrand(max_range)) || isnan(integrand(-max_range)) || isnan(integrand(max_range))
         max_range = 0.5*max_range
         if( max_range < 1.0e-2 ) error("DE積分[0:∞]: コンバージョンしませんでした") end
     end
@@ -22,7 +22,7 @@ function zero_to_inf(f::Function; atol::Real, rtol::Real)
         range += step
         if( isinf(integrand(-range)) || isinf(integrand(range)) ) error("DE積分[0:∞]: コンバージョンしませんでした") end
         val0 = val1
-#        val1, _ = quadgk(integrand, -range, range; atol = atol, rtol = rtol)
+        #        val1, _ = quadgk(integrand, -range, range; atol = atol, rtol = rtol)
         val1 = trapezoid(integrand, -range, range)
     end
     return val1, abs( val0 - val1 )

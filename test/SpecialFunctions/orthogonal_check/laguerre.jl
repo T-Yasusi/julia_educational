@@ -1,3 +1,5 @@
+module LaguerreTest
+
 using Symbolics
 using Test
 
@@ -30,4 +32,6 @@ end
             @test isapprox(val, expected; atol=tolerance)
         end
     end
+end
+
 end

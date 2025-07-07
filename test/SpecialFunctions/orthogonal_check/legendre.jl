@@ -1,3 +1,5 @@
+module Legendre
+
 using Symbolics
 using QuadGK
 using Test
@@ -32,9 +34,4 @@ end
     end
 end
 
-
-
-
-
-
-
+end
