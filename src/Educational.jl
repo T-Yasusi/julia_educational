@@ -5,6 +5,11 @@ include("Educational/SpecialFunctions.jl")
 # include("Educational/SpecialFunctions/OrthogonalPolynomials/hermite.jl")
 # include("Educational/SpecialFunctions/OrthogonalPolynomials/laguerre.jl")
 
+using .DoubleExponentialIntegration
+using .SpecialFunctions
+
+export DoubleExponentialIntegration, SpecialFunctions
+
 # module SpecialFunctions
 # module OrthogonalPolynomials
 # export legendre, hermite, laguerre
