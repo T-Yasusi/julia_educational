@@ -11,3 +11,9 @@ makedocs(
         "Home" => "index.md"
     ]
 )
+
+deploydocs(
+    repo = "github.com/T-Yasusi/julia_educational.git",
+    branch = "gh-pages",
+    devbranch = "main"
+)
