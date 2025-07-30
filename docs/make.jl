@@ -15,5 +15,6 @@ makedocs(
 deploydocs(
     repo = "https://github.com/T-Yasusi/julia_educational.git",
     branch = "gh-pages",
-    devbranch = "main"
+    devbranch = "main",
+    push_preview = true
 )
