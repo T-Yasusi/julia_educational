@@ -13,7 +13,7 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/T-Yasusi/julia_educational.git",
+    repo = "https://github.com/T-Yasusi/julia_educational.git",
     branch = "gh-pages",
     devbranch = "main"
 )
