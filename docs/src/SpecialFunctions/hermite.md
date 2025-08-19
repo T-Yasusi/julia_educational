@@ -1,7 +1,7 @@
 ### エルミート(Hermite)関数
 1. 微分方程式
 ```math
-H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2}
+\frac{d^2H_n(x)}{dx^2} - 2x \frac{dH_n(x)}{dx} + 2n H_n(x) =0
 ```
 2. 直行関係
 ```math

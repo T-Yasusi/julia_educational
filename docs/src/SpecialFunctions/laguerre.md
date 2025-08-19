@@ -1,7 +1,7 @@
 ### ラゲール(Laguerre)関数
 1. 微分方程式
 ```math
-L_n(x) = \frac{e^x}{n!} \frac{d^n}{dx^n} (e^{-x}x^n)
+x \frac{d^2L_n(x)}{dx^2} + (1-x) \frac{dL_n(x)}{dx} + n L_n(x)=0
 ```
 2. 直行関係
 ```math
