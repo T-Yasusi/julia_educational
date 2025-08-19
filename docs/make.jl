@@ -8,7 +8,16 @@ makedocs(
     ),
     remotes = nothing,
     pages =[
-        "Home" => "index.md"
+        "Home" => "index.md",
+        "特殊関数" => [
+            "直行系" => [
+                "ルジャンドル関数"       => "SpecialFunctions/legendre.md",
+                "ラゲール関数"           => "SpecialFunctions/laguerre.md",
+                "エルミート関数"         => "SpecialFunctions/hermite.md",
+                "第一種シェビシェフ関数" => "SpecialFunctions/chebyshev1.md",
+                "第二種シェビシェフ関数" => "SpecialFunctions/chebyshev2.md"
+            ]
+        ]
     ]
 )
 

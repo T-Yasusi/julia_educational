@@ -13,4 +13,7 @@ include("SpecialFunctions/faddeeva.jl")
 # include("SpecialFunctions/erf.jl")
 export gamma, beta, faddeeva
 
+include("SpecialFunctions/bessel.jl")
+export besselj, bessely
+
 end
