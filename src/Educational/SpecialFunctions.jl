@@ -16,4 +16,6 @@ export gamma, beta, faddeeva
 include("SpecialFunctions/bessel.jl")
 export besselj, bessely
 
+include("SpecialFunctions/EllipticFunctions.jl")
+
 end

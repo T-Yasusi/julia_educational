@@ -23,8 +23,8 @@ B = (2n + \alpha + \beta -1) (\alpha^2 - \beta^2) \\
 C = (2n + \alpha + \beta -1) (2n + \alpha + \beta) (2n + \alpha + \beta -2) \\
 D = 2 (n + \alpha -1) (n + \beta -1) (2n +\alpha + \beta)
 \end{array}
-\right.
-& P^{(\alpha, \beta)}_0(x) = 1
+\right. \\
+& P^{(\alpha, \beta)}_0(x) = 1 \\
 & P^{(\alpha, \beta)}_1(x) = \frac{1}{2}((2+\alpha+\beta)x+(\alpha-\beta))
 \end{aligned}
 ```
