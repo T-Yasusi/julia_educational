@@ -7,8 +7,10 @@ using .Educational.SpecialFunctions.EllipticFunctions
 k = 0.1
 xs = range(0, 2*pi; length=400) # 描画区間
 
-#println( Jacobi.sn(pi/2, 0.5), " ", jacobi_sn_AGM(pi/2, 0.5) )
-#exit()
+println( Jacobi.sn(pi/2, 1.5), " ", jacobi_sn_AGM(pi/2, 1.5) )
+println( Jacobi.cn(pi/2, 1.5), " ", jacobi_cn_AGM(pi/2, 1.5) )
+println( Jacobi.dn(pi/2, 1.5), " ", jacobi_dn_AGM(pi/2, 1.5) )
+exit()
 
 sns = [ jacobi_sn_AGM(xi, k) for xi in xs ]
 cns = [ jacobi_cn_AGM(xi, k) for xi in xs ]
