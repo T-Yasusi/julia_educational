@@ -7,18 +7,12 @@ using .Educational.SpecialFunctions.EllipticFunctions
 k = 0.1
 xs = range(0, 2*pi; length=400) # 描画区間
 
-println( Jacobi.sn(pi/2, 1.5), " ", jacobi_sn_AGM(pi/2, 1.5) )
-println( Jacobi.cn(pi/2, 1.5), " ", jacobi_cn_AGM(pi/2, 1.5) )
-println( Jacobi.dn(pi/2, 1.5), " ", jacobi_dn_AGM(pi/2, 1.5) )
-exit()
-
 sns = [ jacobi_sn_AGM(xi, k) for xi in xs ]
 cns = [ jacobi_cn_AGM(xi, k) for xi in xs ]
 dns = [ jacobi_dn_AGM(xi, k) for xi in xs ]
 sns2 = [ Jacobi.sn(xi, k) for xi in xs ]
 cns2 = [ Jacobi.cn(xi, k) for xi in xs ]
 dns2 = [ Jacobi.dn(xi, k) for xi in xs ]
-
 
 colors = palette(:tab10) # 色や凡例用
 p = plot(title="Jacobi Elliptic Functions", legend=:topright)
