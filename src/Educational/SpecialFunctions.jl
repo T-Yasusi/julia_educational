@@ -9,12 +9,11 @@ using .DoubleExponentialIntegration
 
 include("SpecialFunctions/gamma.jl")
 include("SpecialFunctions/beta.jl")
-include("SpecialFunctions/faddeeva.jl")
 # include("SpecialFunctions/erf.jl")
-export gamma, beta, faddeeva
+export gamma, beta
 
 include("SpecialFunctions/bessel.jl")
-export besselj, bessely
+export bessel, hankel
 
 include("SpecialFunctions/EllipticFunctions.jl")
 

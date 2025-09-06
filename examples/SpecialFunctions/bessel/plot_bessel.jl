@@ -10,7 +10,7 @@ colors = palette(:tab10) # 色や凡例用
 p = plot(title="Bessel Function \$ J_0 \\sim J_$max_n \$", legend=:topright)
 
 for n in 0:max_n
-    ys = [besselj(n, xi) for xi in xs]
+    ys = [bessel(n, xi) for xi in xs]
 
     plot!(xs, ys, label="\$ J_$n(x) \$", color=colors[mod1(n+1, length(colors))]) # プロットに追加
 end

@@ -10,7 +10,7 @@ makedocs(
     pages =[
         "Home" => "index.md",
         "特殊関数" => [
-            "直行系" => [
+            "直行多項式系" => [
                 "ルジャンドル関数"       => "SpecialFunctions/legendre.md",
                 "ルジャンドル陪関数"     => "SpecialFunctions/associated_legendre.md",
                 "ラゲール関数"           => "SpecialFunctions/laguerre.md",
