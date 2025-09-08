@@ -19,8 +19,10 @@ makedocs(
                 "第一種シェビシェフ関数" => "SpecialFunctions/chebyshev1.md",
                 "第二種シェビシェフ関数" => "SpecialFunctions/chebyshev2.md",
                 "ヤコビ多項式"           => "SpecialFunctions/jacobi.md"
-            ]
-            "ベータ・ガンマ関数" => "SpecialFunctions/beta_gamma.md"
+            ],
+            "ベータ・ガンマ関数" => "SpecialFunctions/beta_gamma.md",
+            "ベッセル関数"       => "SpecialFunctions/bessel.md",
+            "楕円関数" => "SpecialFunctions/elliptic.md"
         ]
     ]
 )
