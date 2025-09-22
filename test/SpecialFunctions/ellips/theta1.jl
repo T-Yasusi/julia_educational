@@ -6,6 +6,8 @@ using .Educational.SpecialFunctions.EllipticFunctions
 
 max_range = 5
 delta = 0.25
+n_peridoic = 10
+n_qusi_peridoic = 10
 
 function check_package(z, tau; atol, rtol)
     val  = theta1(z, tau)
@@ -39,7 +41,7 @@ function check_package_all(; atol, rtol)
                 for z_re in -1: delta: 1
                     for z_im in -tau_im: delta: tau_im
                         check_package(z_re+z_im*im, tau_re+tau_im*im, atol = atol, rtol = rtol)
-                    end
+                    end                    
                 end 
             end
         end

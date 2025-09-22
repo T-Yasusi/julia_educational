@@ -6,9 +6,8 @@ function product_val(z::Complex, q::Complex; atol=1e-8, rtol=1e-8, Nmax)
         a = 1 - q^(2n)
         b = 1 - 2*q^(2n-1)*cos(2*pi*z) + q^(4n-2)
         sum += log(a) + log(b)
-        println("q^(2n) = ", q^(2n), " n = ", n, "  log(a) = ", log(a), " log(b) = ", log(b))
         if abs(q^(2n)) < atol
-            println("pruduct val ", exp(sum), "  ", sum)
+            println("pruduct val ", exp(sum), sum)
             return exp(sum)
         end
 
@@ -51,9 +50,7 @@ function theta4(z::Complex, tau::Complex; atol=1e-8, rtol=1e-8, Nmax = 1000)
         a = (-1)^n * q^(n^2) 
         term = a * 2 * cos(2*n*pi*z)
         # if n == 1 && abs(term+s)<1e-5
-        s2 = product_val(z, q, atol=atol, rtol=rtol, Nmax = Nmax)
-        println(factor, "  ", s2)
-        return factor*s2
+        #     return factor*product_val(z, q, atol=atol, rtol=rtol, Nmax = Nmax)
         # end
         s_new = s + term
         println("term = ", term)

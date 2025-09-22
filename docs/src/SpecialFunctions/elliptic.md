@@ -20,7 +20,7 @@ K(m) = \int^{\phi}_{0}\frac{1}{\sqrt{1-m \sin^2\theta}} d\theta
 a_{n+1} = \frac{a_n + b_n}{2} \\
 b_{n+1} = \sqrt{a_n b_n}
 ```
-とすることで$b_n \leqq \frac{pi}{2}K(m) \leqq a_n$となる性質があり、これを用いて計算する。
+とすることで$b_n \leqq \frac{\pi}{2}K(m) \leqq a_n$となる性質があり、これを用いて計算する。
 
 この方法任意の$\phi$でも使えるがその際、各ステップごとに$\phi$が変化する。
 

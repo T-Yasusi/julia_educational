@@ -22,7 +22,10 @@ makedocs(
             ],
             "ベータ・ガンマ関数" => "SpecialFunctions/beta_gamma.md",
             "ベッセル関数"       => "SpecialFunctions/bessel.md",
-            "楕円関数" => "SpecialFunctions/elliptic.md"
+            "楕円関数" => [
+                "ヤコビの楕円関数" => "SpecialFunctions/elliptic.md",
+                "楕円テータ関数" => "SpecialFunctions/theta.md",
+            ]
         ]
     ]
 )

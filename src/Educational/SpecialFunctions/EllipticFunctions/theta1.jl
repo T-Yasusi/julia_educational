@@ -1,3 +1,4 @@
+
 function theta1(z::Complex, tau::Complex; atol=1e-8, rtol=1e-8, Nmax = 1000)
     @assert imag(tau)>0 "theta function(z, tau) imag(tau) should be positive $tau"
     
