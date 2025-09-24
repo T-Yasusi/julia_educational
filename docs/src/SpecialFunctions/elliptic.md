@@ -1,15 +1,14 @@
 ### ヤコビの楕円関数
-ヤコビの楕円関数は完全楕円積分
+ヤコビの楕円関数は不完全楕円積分の逆関数として定義される。つまり、
 ```math
-K(m) = \int^{\phi}_{0}\frac{1}{\sqrt{1-m \sin^2\theta}} d\theta
+u(\phi, m) = \int^{\phi}_{0}\frac{1}{\sqrt{1-m \sin^2\theta}} d\theta
 ```
-によって求まる$\phi$を用いて
+によって求まる$\phi$を用いて以下で表される。
 ```math
 \mbox{sn}(\phi, m) = \sin\phi \\
 \mbox{cn}(\phi, m) = \cos\phi \\
 \mbox{dn}(\phi, m) = \sqrt{1-m\sin^2\phi}
 ```
-で定義される。
 
 つまりこれは三角関数を楕円に一般化したものと言える。
 
@@ -20,9 +19,10 @@ K(m) = \int^{\phi}_{0}\frac{1}{\sqrt{1-m \sin^2\theta}} d\theta
 a_{n+1} = \frac{a_n + b_n}{2} \\
 b_{n+1} = \sqrt{a_n b_n}
 ```
-とすることで$b_n \leqq \frac{\pi}{2}K(m) \leqq a_n$となる性質があり、これを用いて計算する。
+とすることで完全楕円積分$K(m) = \int^{\pi/2}_{0}\frac{1}{\sqrt{1-m \sin^2\theta}} d\theta$が
+$b_n \leqq \frac{\pi}{2}K(m) \leqq a_n$となる性質があり、これを用いて計算する。
 
-この方法任意の$\phi$でも使えるがその際、各ステップごとに$\phi$が変化する。
+この方法では任意の$\phi$でも使えるがその際、各ステップごとに$\phi$が変化する。
 
 この変化は積分の変数変換で計算することができ結果だけ示すと以下の式で表される。
 ```math

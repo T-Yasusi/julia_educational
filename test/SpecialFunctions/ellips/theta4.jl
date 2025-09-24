@@ -13,20 +13,20 @@ const dz_re = 2/N
 const N_period = 10
 
 function check_package(z, tau; atol = 0, rtol = 0)
-    val  = theta1(z, tau)
-    val2 = EF.jtheta1(z*pi, exp(im*pi*tau) )
+    val  = theta4(z, tau)
+    val2 = EF.jtheta4(z*pi, exp(im*pi*tau) )
     @test isapprox(val, val2, atol=atol, rtol=rtol)
 end
 
 function check_periodic(z, tau; atol = 0, rtol = 0)
-    val  = theta1(z, tau)
-    val2 = -1*theta1(z+1, tau)
+    val  = theta4(z, tau)
+    val2 = theta4(z+1, tau)
     @test isapprox(val, val2, atol=atol, rtol=rtol)
 end
 
 function check_quasi_periodic(z, tau; atol = 0, rtol = 0)
-    val  = exp(-pi*im*tau-2*pi*im*z)*theta1(z, tau)
-    val2 = -1*theta1(z+tau, tau)
+    val  = -1*exp(-pi*im*tau-2*pi*im*z)*theta4(z, tau)
+    val2 = theta4(z+tau, tau)
     if !isfinite(val) || !isfinite(val2)
         return
     end
@@ -34,7 +34,7 @@ function check_quasi_periodic(z, tau; atol = 0, rtol = 0)
 end
 
 function check_package_all(; atol = 0, rtol = 0)    
-    @testset "Elliptic theta1 function check using EllipticcFunctions package" begin
+    @testset "Elliptic theta4 function check using EllipticcFunctions package" begin
         for tau_re in -tau_re_max: dtau_re: tau_re_max
             for tau_im in dtau_im: dtau_im: tau_im_max
                 dz_im = 2*tau_im/N
@@ -49,7 +49,7 @@ function check_package_all(; atol = 0, rtol = 0)
 end
 
 function check_periodic_all(; atol = 0, rtol = 0)
-    @testset "Elliptic theta1 function check using Peridodic Condition" begin
+    @testset "Elliptic theta4 function check using Peridodic Condition" begin
         for tau_re in -tau_re_max: dtau_re: tau_re_max
             for tau_im in dtau_im: dtau_im: tau_im_max
                 dz_im = 2*tau_im/N
@@ -66,7 +66,7 @@ function check_periodic_all(; atol = 0, rtol = 0)
 end
 
 function check_quasi_periodic_all(; atol = 0, rtol = 0)
-    @testset "Elliptic theta1 function check using Quasi-Peridodic Condition" begin
+    @testset "Elliptic theta4 function check using Quasi-Peridodic Condition" begin
         for tau_re in -tau_re_max: dtau_re: tau_re_max
             for tau_im in dtau_im: dtau_im: tau_im_max
                 dz_im = 2*tau_im/N
@@ -83,7 +83,7 @@ function check_quasi_periodic_all(; atol = 0, rtol = 0)
     end
 end
 
-check_package_all(atol = 1e-4, rtol = 1e-4)
+check_package_all(atol = 1e-8, rtol = 1e-8)
 check_periodic_all(atol = 1e-13, rtol = 1e-13)
 check_quasi_periodic_all(atol = 1e-10, rtol = 1e-10)
 

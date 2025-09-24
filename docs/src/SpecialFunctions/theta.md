@@ -17,10 +17,37 @@
 \vartheta_3(z+\tau, \tau) = \exp(-i(\tau \pi + 2\pi z))\vartheta_3(z, \tau) \\
 \vartheta_4(z+\tau, \tau) = (-1) \exp(-i(\tau \pi + 2\pi z))\vartheta_4(z, \tau) 
 ```
-また、積表示では
+#### 積表示
 ```math
 \vartheta_1(z, \tau) = 2e^{i\pi\tau/4} \sin\pi z \prod_{n=1}^{\infty}(1-e^{2n\pi\tau i})(1 - 2 e^{2n\pi\tau i} \cos 2\pi z +e^{4n\pi\tau i}) \\
 \vartheta_2(z, \tau) = 2e^{i\pi\tau/4} \cos\pi z \prod_{n=1}^{\infty}(1-e^{2n\pi\tau i})(1 + 2 e^{2n\pi\tau i} \cos 2\pi z +e^{4n\pi\tau i}) \\
 \vartheta_3(z, \tau) = \prod_{n=1}^{\infty}(1-e^{2n\pi\tau i})(1 + 2 e^{(2n+1)\pi\tau i} \cos 2\pi z +e^{4n\pi\tau i}) \\
 \vartheta_4(z, \tau) = \prod_{n=1}^{\infty}(1-e^{2n\pi\tau i})(1 - 2 e^{(2n+1)\pi\tau i} \cos 2\pi z +e^{4n\pi\tau i}) \\
+```
+この積表示より以下の$\vartheta$関数間の以下の変換恒等式が成り立つ
+```math
+\vartheta_2 \left( z + \frac{1}{2}, \tau \right) = -\vartheta_1(z, \tau) \\
+\vartheta_3 \left( z + \frac{1}{2}, \tau \right) = \vartheta_4(z, \tau) \\
+\vartheta_3 \left( z + \frac{1}{2}, \tau \right) = \exp \left(-i \pi \left( \frac{\tau}{4} + z \right) \right) \vartheta_2(z, \tau) \\
+```
+これと、周期性から以下の変換式が成り立つ
+```math
+\vartheta_1 \left( z \pm \frac{1}{2}, \tau \right) = \pm \vartheta_2( z, \tau) \\
+\vartheta_3 \left( z \pm \frac{1}{2}, \tau \right) = \vartheta_4( z, \tau) \\
+\vartheta_1 \left( z \pm \frac{1}{2}, \tau \right) = \pm i \exp \left(-i \pi \left( \frac{\tau}{4} \mp z \right) \right) \vartheta_4(z, \tau) \\
+\vartheta_3 \left( z \pm \frac{1}{2}, \tau \right) = \exp \left(-i \pi \left( \frac{\tau}{4} \mp z \right) \right) \vartheta_2(z, \tau) \\
+```
+
+#### モジュラー変換
+
+モジュラー変換はヤコビの虚数変換と呼ばれ以下の、$\tau$の変換$\tau \rightarrow -\frac{1}{\tau}$である。
+```math
+\vartheta_1 \left( \frac{z}{\tau}, -\frac{1}{\tau} \right)
+= -i \tau^{1/2} \exp \left(i \pi \left( \frac{z^2}{\tau} - \frac{1}{4} \right) \right) \vartheta_1(z, \tau) \\
+\vartheta_2 \left( \frac{z}{\tau}, -\frac{1}{\tau} \right)
+= \tau^{1/2} \exp \left(i \pi \left( \frac{z^2}{\tau} - \frac{1}{4} \right) \right) \vartheta_2(z, \tau) \\
+\vartheta_3 \left( \frac{z}{\tau}, -\frac{1}{\tau} \right)
+= \tau^{1/2} \exp \left(i \pi \left( \frac{z^2}{\tau} - \frac{1}{4} \right) \right) \vartheta_3(z, \tau) \\
+\vartheta_4 \left( \frac{z}{\tau}, -\frac{1}{\tau} \right)
+= \tau^{1/2} \exp \left(i \pi \left( \frac{z^2}{\tau} - \frac{1}{4} \right) \right) \vartheta_4(z, \tau)
 ```

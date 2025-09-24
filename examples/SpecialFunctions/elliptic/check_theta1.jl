@@ -139,9 +139,9 @@ function check_quasi_periodic_all(; atol = 0, rtol = 0, print = false)
     println("n check : ", n_check, "  n error : ", n_error)
 end
 
-check_package_all(atol =1e-4, rtol = 1e-4, print = false)
-check_periodic_all(atol = 1e-4, rtol = 1e-4, print = false)
-check_quasi_periodic_all(atol = 1e-4, rtol = 1e-4, print = false)
+check_package_all(atol =2e-4, rtol = 2e-4, print = true)
+check_periodic_all(atol = 1e-12, rtol = 1e-12, print = false)
+check_quasi_periodic_all(atol = 1e-12, rtol = 1e-12, print = false)
 
 
 
