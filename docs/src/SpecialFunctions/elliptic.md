@@ -5,9 +5,9 @@ u(\phi, m) = \int^{\phi}_{0}\frac{1}{\sqrt{1-m \sin^2\theta}} d\theta
 ```
 によって求まる$\phi$を用いて以下で表される。
 ```math
-\mbox{sn}(\phi, m) = \sin\phi \\
-\mbox{cn}(\phi, m) = \cos\phi \\
-\mbox{dn}(\phi, m) = \sqrt{1-m\sin^2\phi}
+\mbox{sn}(u, m) = \sin\phi \\
+\mbox{cn}(u, m) = \cos\phi \\
+\mbox{dn}(u, m) = \sqrt{1-m\sin^2\phi}
 ```
 
 つまりこれは三角関数を楕円に一般化したものと言える。

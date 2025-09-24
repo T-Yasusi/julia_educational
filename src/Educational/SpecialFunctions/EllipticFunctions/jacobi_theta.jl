@@ -1,5 +1,4 @@
 include("theta.jl")
-# import theta1, theta2, theta3, theta4
 
 function calc_z_tau(u::Complex, m::Complex; tol)
     function AGM(m::Complex, tol = tol)
@@ -14,7 +13,7 @@ function calc_z_tau(u::Complex, m::Complex; tol)
     agm2 = AGM(m2, tol)
     
     tau = im * agm / agm2
-    z = u*agm/pi + 0.0im
+    z = u*agm/pi
 
     return (z, tau)
 end
