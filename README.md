@@ -83,3 +83,7 @@ end
 
 ### Examples
 `examples`にあり、使い方例などがある。
+
+## ライセンス/License
+このプロジェクトは MIT License の下で公開されています。詳細は [LICENSE](./LICENSE) ファイルを参照してください。
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
