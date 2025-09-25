@@ -30,13 +30,56 @@
 - 第二Chebyshev関数
 - Jacobiの多項式
 
-### Γ・Β関数
+#### Γ・Β関数
 
-### ベッセル関数
+#### ベッセル関数
 
-### 楕円関数系
+#### 楕円関数系
 - Jacobiの楕円関数
 - テータ関数系
 
 ## インストール方法
 Juliaのインストールは[公式のHP](https://julialang.org/)を参照のこと
+その後、ターミナル/コマンドプロプントで
+
+```shell
+> git clone https://github.com/T-Yasusi/julia_educational.git
+> julia
+julia> using Pkg
+julia> Pkg.activate(".")
+julia> Pkg.instantiate()
+```
+とすることで必要なパッケージ等がダウンロード・インストールされる。
+また、juliaでのコマンド入力は以下のワンライナーでもいい
+
+```shell
+> julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()'
+```
+
+パッケージインストールがうまくいくと
+```
+> julia --project=. examples/~
+```
+などで$examples$が走ると成功である。
+
+## ファイル構成など
+### ライブラリ本体
+`src/Educatinal.jl`に以下のようにモジュールとして定義されており、サブモジュールはファイル名と対応するようにしてある。
+```julia:src/Educational.jl
+module Educational
+
+include("Educational/DoubleExponentialIntegration.jl")
+include("Educational/SpecialFunctions.jl")
+
+using .DoubleExponentialIntegration
+using .SpecialFunctions
+
+export DoubleExponentialIntegration, SpecialFunctions
+
+end
+```
+### テスト
+テストは`test/`ディレクトリ以下においてあり、`test/runtests.jl`に纏められている。
+
+### Examples
+`examples`にあり、使い方例などがある。

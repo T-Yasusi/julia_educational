@@ -36,13 +36,14 @@ function theta3(z::Complex, tau::Complex; atol=1e-8, rtol=1e-8, Nmax = 1000)
         end
 
         if isnan(s_new)
+            println("z = ", z, "  tau = ", tau, "  q = ", q)
             error("theta3 did not converge due to NaN")            
         end
         s = s_new
         n += 1
     end
    
-#    println("input: z = ", z, "  tau = ", tau, "  q = ", q)
+    println("z = ", z, "  tau = ", tau, "  q = ", q)
     error("theta3 did not converge within $Nmax terms")
 end
 
