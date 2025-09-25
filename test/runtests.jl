@@ -14,3 +14,4 @@ include("SpecialFunctions/orthogonal_check/legendre.jl")
 include("SpecialFunctions/orthogonal_check/normalized_associated_legendre.jl")
 
 include("SpecialFunctions/ellips/jacobi_AGM.jl")
+include("SpecialFunctions/ellips/jacobi_AGM_theta.jl")

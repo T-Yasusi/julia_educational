@@ -12,12 +12,15 @@
 1. (-∞ : ∞)の積分
 2. [0 : ∞)の積分
 3. (-1 : 1)の積分
+
 の三種類があるが区間の引数で自動的に切り替わるようになっている。
 
 ### 特殊関数
 #### 直行多項式系
 ある区間にある重みをかけて直行系を作る多項式である。
+
 これらは誤差を抑えるために漸化式で計算されている。
+
 また、これらは数値だけでなくSymbolicsでも定義されている。
 
 以下のものが実装されている。
@@ -39,8 +42,7 @@
 - テータ関数系
 
 ## インストール方法
-Juliaのインストールは[公式のHP](https://julialang.org/)を参照のこと
-その後、ターミナル/コマンドプロプントで
+Juliaのインストールは[公式のHP](https://julialang.org/)を参照のこと。その後、ターミナル/コマンドプロプントで
 
 ```shell
 > git clone https://github.com/T-Yasusi/julia_educational.git
@@ -50,6 +52,7 @@ julia> Pkg.activate(".")
 julia> Pkg.instantiate()
 ```
 とすることで必要なパッケージ等がダウンロード・インストールされる。
+
 また、juliaでのコマンド入力は以下のワンライナーでもいい
 
 ```shell
@@ -60,7 +63,7 @@ julia> Pkg.instantiate()
 ```
 > julia --project=. examples/~
 ```
-などで$examples$が走ると成功である。
+などで`examples`が走ると成功である。
 
 ## ファイル構成など
 ### ライブラリ本体
@@ -86,4 +89,5 @@ end
 
 ## ライセンス/License
 このプロジェクトは MIT License の下で公開されています。詳細は [LICENSE](./LICENSE) ファイルを参照してください。
+
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
