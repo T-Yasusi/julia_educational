@@ -3,7 +3,7 @@ function zero_to_inf(f::Function; atol::Real, rtol::Real)
     dphi(t) = (pi/2) * cosh(t) * phi(t)
 
     integrand(t) = f(phi(t)) * dphi(t)
-
+    
     max_range = 10.0;
     while isinf(integrand(-max_range)) || isinf(integrand(max_range)) || isnan(integrand(-max_range)) || isnan(integrand(max_range))
         max_range = 0.5*max_range

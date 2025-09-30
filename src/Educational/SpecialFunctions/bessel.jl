@@ -4,11 +4,13 @@ function bessel(ν::Symbolics.Num, z::Symbolics.Num)
 end
 
 function bessel(ν::Union{Real, Complex}, x::Real)
+    if x == 0
+        return ν == 0 ? 1 : 0
+    end
     return (quadgk(t -> cos(ν*t - x*sin(t)), 0, pi)[1] - sin(ν*pi) * deint(t -> exp(-x*sinh(t) - ν*t), 0, Inf)[1]) /pi
 end
 
 function bessel(ν::Union{Real, Complex}, z::Complex)
-
     return quadgk(t -> exp(im * (ν*t - z*sin(t)) ), -pi, pi)[1]/(2*pi)
 end
 
