@@ -12,6 +12,7 @@ include("SpecialFunctions/orthogonal_check/jacobi_function.jl")
 include("SpecialFunctions/orthogonal_check/laguerre.jl")
 include("SpecialFunctions/orthogonal_check/legendre.jl")
 include("SpecialFunctions/orthogonal_check/normalized_associated_legendre.jl")
+include("test/SpecialFunctions/bessel/orthogonal_check.jl")
 
 include("SpecialFunctions/ellips/jacobi_AGM.jl")
 include("SpecialFunctions/ellips/jacobi_AGM_theta.jl")
