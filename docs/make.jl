@@ -26,6 +26,9 @@ makedocs(
                 "ヤコビの楕円関数" => "SpecialFunctions/elliptic.md",
                 "楕円テータ関数" => "SpecialFunctions/theta.md",
                 "楕円テータ関数による楕円関数" => "SpecialFunctions/jacobi_theta.md",
+            ],
+            "リー群論" => [
+                "Clebsch Gordon係数" => "LieGroup/clebsch_gordon.md"
             ]
         ]
     ]
