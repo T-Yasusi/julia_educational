@@ -12,8 +12,8 @@ include("Educational/SU.jl")
 
 using .SU
 
+println(SU)
+
 export DoubleExponentialIntegration, SpecialFunctions, Integration, SU
-
-
 
 end
