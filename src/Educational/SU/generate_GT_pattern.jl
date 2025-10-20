@@ -21,7 +21,7 @@ end
 
 function can_lower_op(pattern::Vector{Vector{Int}}, i::Int, j::Int)
     if pattern[i][j] > pattern[i-1][j+1]
-        if j>=length(pattern[i]) || (j<length(pattern[i]) && pattern[i][j] > pattern[i+1][j])
+        if j>=length(pattern[i]) || pattern[i][j] > pattern[i+1][j]
             return true
         end
     end
@@ -44,21 +44,21 @@ function generate(result, pattern)
 end
 
 function generate_GT_pattern(weight::Vector{Int})
-    println("===== Generate GT Pattern START  =====")
+#    println("===== Generate GT Pattern START  =====")
     result = Vector{Vector{Vector{Int}}}()
     gt_pattern = [ weight[1:i] for i in length(weight):-1:1]
     push!(result, deepcopy(gt_pattern))
 
     generate(result, gt_pattern)
     unique!(result)    
-    println("===== Generate GT Pattern FINISH =====")
+#    println("===== Generate GT Pattern FINISH =====")
 
     @assert length(result) == irrep_dimN(weight) "generate_GT_pattern::Not match irrep dimension"
-    sort!(result; lt = (a, b)-> is_less(a, b))
+#    sort!(result; lt = (a, b)-> is_less(a, b))
 
-    @variables E[1:length(result)]
-    println(E)
-    return result, E # GTパターン, 対応するSumbolics
+#    @variables E[1:length(result)]
+#    println(E)
+    return result # GTパターン
 end
 
 export generate_GT_pattern
