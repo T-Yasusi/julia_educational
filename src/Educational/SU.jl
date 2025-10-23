@@ -1,6 +1,6 @@
 module SU
 
-using Symbolics
+using Symbolics, SymPy
 
 include("SU/generate_GT_pattern.jl")
 include("SU/irrep_dimN.jl")
