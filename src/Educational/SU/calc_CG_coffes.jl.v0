@@ -1,0 +1,53 @@
+include("generate_GT_pattern.jl")
+include("weight_from_GT.jl")
+include("eign_from_GT.jl")
+
+function calc_CG_coffes(w1::Vector{Int}, w2::Vector{Int})
+    irrep1, sym1 = generate_GT_pattern(w1)
+    irrep2, sym2 = generate_GT_pattern(w2)
+    
+    if length(irrep1) < length(irrep2)
+        irrep1, irrep2 = irrep2, irrep1
+        sym1, sym2 = sym2, sym1
+    end
+    println("din n1 = ", length(irrep1))
+    println("din n2 = ", length(irrep2))
+    
+    for gt in irrep2
+        println(" perttern = ", gt)
+        b = deepcopy(gt)
+        for i in 1:length(gt)-1
+            for j in 1:length(gt[i])-1
+                b[i][j] -= gt[i+1][j]
+            end
+        end
+        println(" b = ", b)
+
+        t = deepcopy(irrep1[1][1])
+        flag = true
+        for j in 1:length(gt)
+            for i in 1:length(gt[j])
+                t[i] += b[i][j]
+                println("i = ", i, "  j = ", j, "  t = ", t, " b = ", b[i][j])
+                if i>1 && t[i-1]<t[i]
+                    println("i = ", i, "  t = ", t)
+#                    flag = false
+#                    break
+                end
+            end
+            if !flag
+                break
+            end
+        end
+        if flag
+            # if t[end]>0
+            #     t = [ t[i]-t[end] for i in 1:length(t) ]
+            # end
+            println("Add Irrep")
+            println(t)
+        end
+    end
+    
+end
+
+export calc_CG_coffes

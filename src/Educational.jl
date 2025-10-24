@@ -8,6 +8,10 @@ using .DoubleExponentialIntegration
 using .SpecialFunctions
 using .Integration
 
-export DoubleExponentialIntegration, SpecialFunctions, Integration
+include("Educational/SU.jl")
+
+using .SU
+
+export DoubleExponentialIntegration, SpecialFunctions, Integration, SU
 
 end
