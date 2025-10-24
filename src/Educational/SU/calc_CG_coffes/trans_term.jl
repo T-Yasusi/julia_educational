@@ -1,9 +1,7 @@
 include("summrize.jl")
 
 function trans_term(coffs, ids, next_expr, exprs)
-    println("trans term")
-    println(ids)
-    println(coffs)
+#    println("trans term")
     ids2, coffs2 = [], []
     for i in 1:length(ids)
         if length(exprs[ids[i]])>0
@@ -16,16 +14,23 @@ function trans_term(coffs, ids, next_expr, exprs)
         end
     end
     next_expr = summrize(next_expr)
-    
-    println(length(next_expr))
-    println(to_string_ket(next_expr))
+
+#    println(ids2)
+#    println(length(next_expr))
+#    println(to_string_ket(next_expr))
     if length(ids2)==1
         for term in next_expr
             term.coff /= coffs2[1]
         end
         exprs[ids2[1]] = next_expr
-        return
+        return ids2, next_expr
     end
-                      
-    error("実装中")
+
+    # println("========")
+    # println(coffs)
+    # println(ids)
+    # println(next_expr)
+    # error("実装中")
+    println("skip")
+    return [], next_expr
 end
