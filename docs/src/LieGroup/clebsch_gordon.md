@@ -1,1 +1,1 @@
-## SU(N)におけるClebsch Gordon係数
+## $SU(N)$におけるClebsch Gordon係数
