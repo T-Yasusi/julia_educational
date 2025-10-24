@@ -14,10 +14,6 @@ function trans_term(coffs, ids, next_expr, exprs)
         end
     end
     next_expr = summrize(next_expr)
-
-#    println(ids2)
-#    println(length(next_expr))
-#    println(to_string_ket(next_expr))
     if length(ids2)==1
         for term in next_expr
             term.coff /= coffs2[1]
@@ -29,8 +25,7 @@ function trans_term(coffs, ids, next_expr, exprs)
     # println("========")
     # println(coffs)
     # println(ids)
-    # println(next_expr)
-    # error("実装中")
-    println("skip")
+    # println(to_string_ket(next_expr))
+    # println("skip")
     return [], next_expr
 end

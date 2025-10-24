@@ -6,9 +6,6 @@ include("summrize.jl")
 function next(irrep, irrep1, irrep2, expr, gt, i, exprs)
 #    println("===== Calc Lower Operator : i = ", i, " =====")
 #    println( to_string_ket(gt), " = ", to_string_ket(expr) )
-    if( gt === [ [ 3, 2, 0 ], [ 2, 1 ], [ 1 ] ] )
-        println("Check")
-    end
     
     next_expr = Vector{Term}()
     for term in expr
@@ -31,20 +28,11 @@ function next(irrep, irrep1, irrep2, expr, gt, i, exprs)
     if length(as)==0
         return
     elseif length(as)==1
-#        println("id = ", idxs[1])
-#        println( irrep[idxs[1]])
-#        for j in 1:length(next_expr)
-#            println(j, ". coff = ", next_expr[j].coff)
-#            println(j, ". gt1  = ", next_expr[j].gt1)
-#            println(j, ". gt2  = ", next_expr[j].gt2)
-#        end
-        
         for term in next_expr
             term.coff /= as[1]
         end
         exprs[idxs[1]] = next_expr
         
-#        println( to_string_ket(irrep[idxs[1]]), " = ", to_string_ket(next_expr))       
         for j in 2:length(gt)
             next(irrep, irrep1, irrep2, next_expr, irrep[idxs[1]], j, exprs)
         end

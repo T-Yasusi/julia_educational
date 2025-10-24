@@ -2,24 +2,6 @@ include("irrep_dimN.jl")
 include("weight_from_GT.jl")
 include("can_lower_op.jl")
 
-# function is_less(a::Vector{Vector{Int}}, b::Vector{Vector{Int}})
-#     wa, wb = weight_from_GT(a), weight_from_GT(b)
-
-#     for (x, y) in zip(wa, wb)
-#         if x != y
-#             return x < y 
-#         end
-#     end
-
-#     va, vb = vcat(a), vcat(b)
-#     for (x, y) in zip(va, vb)
-#         if x != y
-#             return x < y
-#         end
-#     end
-#     error("Lie Group SU  same GT pattern")
-# end
-
 function generate(result, pattern)
     for i in 2: length(pattern)
         for j in length(pattern[i]): -1: 1

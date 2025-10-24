@@ -36,6 +36,5 @@ function decompose_irrep(irrep1, irrep2)
     end
     sort!(top_weights, rev=true)
     
-    println(top_weights)    
     return top_weights
 end

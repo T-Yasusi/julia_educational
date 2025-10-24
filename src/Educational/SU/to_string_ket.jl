@@ -21,16 +21,17 @@ function to_string_ket(gt::Vector{Vector{Int}})
 end
 
 function to_string_ket(expr::Vector{Term})
+    function inner(term::Term)
+        return "$(abs(term.coff)) " * to_string_ket(term.gt1) * to_string_ket(term.gt2) 
+    end
+    
     if length(expr) == 0
         return ""
-    elseif length(expr) == 1
-        return "$(expr[1].coff) " * to_string_ket(expr[1].gt1) * to_string_ket(expr[1].gt2)
     else
-        str = ""
-        for i in 1:length(expr)-1
-            str *= "$(expr[i].coff) " * to_string_ket(expr[i].gt1) * to_string_ket(expr[i].gt2) * " + "
+        str = ( expr[1].coff > 0 ? "" : " - " ) * inner(expr[1])
+        for i in 2:length(expr)
+            str *= ( expr[i].coff > 0 ? " + " : " - " ) * inner(expr[i])
         end
-        str *= "$(expr[length(expr)].coff) " * to_string_ket(expr[length(expr)].gt1) * to_string_ket(expr[length(expr)].gt2)
         return str
     end
 end
